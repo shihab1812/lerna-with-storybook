@@ -1,19 +1,32 @@
 import { storiesOf } from '@storybook/vue'
-import JTableRow from './test.vue'
+import Avatar from './test.vue'
 
-storiesOf('table-row', module)
-  .add('normal', () => ({
-    components: { JTableRow },
-    template:
-    `
-      <JTableRow
-        :values="values"
-      />
-    `,
+
+
+  export default {
+    title: 'Design System/Avatar',
+    parameters: {
+      component: Avatar,
+      componentSubtitle: 'Displays an image that represents a user or organization',
+    },
+  };
+
+  export const ActionOnly = () => ({
+    components : {Avatar},
+    template:     `
+    <Avatar
+      :values="values"
+    />
+  `,
     data: () => ({
       values: [
         'José Silva',
         'email@email.com'
       ]
     })
-  }))
+  });
+
+
+
+
+

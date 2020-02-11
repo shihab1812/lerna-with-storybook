@@ -3,8 +3,20 @@ const path = require('path');
 
 
 module.exports = {
-  stories: ['../components/**/*.stories.js'],
-  addons: ['@storybook/addon-actions', '@storybook/addon-links'],
+  stories: ['../components/**/*.stories.(js|mdx)'],
+  addons: ['@storybook/addon-actions', '@storybook/addon-links','@storybook/addon-a11y/register', '@storybook/addon-docs', {
+    name: '@storybook/addon-storysource',
+    options: {
+      rule: {
+        // test: [/\.stories\.jsx?$/], This is default
+        include: [path.resolve(__dirname, '../components')], // You can specify directories
+      },
+      loaderOptions: {
+        prettierConfig: { printWidth: 80, singleQuote: false },
+      },
+    },
+  }],
+
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
