@@ -22,8 +22,8 @@ export default {
     Use the loading state to indicate that the data Avatar needs is still loading.
     */
     values: {
-      type: bool,
-      required: true
+      type: Array,
+      required: false
     },
      /**
     The height of the Avatar's image.

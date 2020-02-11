@@ -4,7 +4,7 @@ import Avatar from './test.vue'
 
 
   export default {
-    title: 'Design System/Avatar',
+    title: 'Elements|/Avatar',
     parameters: {
       component: Avatar,
       componentSubtitle: 'Displays an image that represents a user or organization',

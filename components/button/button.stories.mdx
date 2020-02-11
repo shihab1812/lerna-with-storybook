@@ -1,0 +1,35 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import Buttons from './index.vue';
+
+<Meta title="Elements|Buttons" component={Buttons} />
+
+# Buttons
+
+## Displays an image that represents a user or organization
+
+Use an Buttons for attributing actions or content to specific users. The user's name should _always_ be present when using Buttons – either printed beside the avatar or in a tooltip.
+
+<Preview withToolbar>
+  <Story name="standard" height="100px">
+    {{
+    components : {Buttons},
+    template: ' <Buttons/>',
+  }}
+  </Story>
+</Preview>
+
+<Props of={Buttons} />
+
+# sizes
+
+## this can have four varients
+
+see the below usage formats
+
+### Regular
+<Story name="sizes">
+  {{
+    components : {Buttons},
+    template: ' <Buttons/>',
+  }}
+</Story>

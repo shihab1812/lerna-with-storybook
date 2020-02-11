@@ -4,7 +4,14 @@ const path = require('path');
 
 module.exports = {
   stories: ['../components/**/*.stories.(js|mdx)'],
-  addons: ['@storybook/addon-actions', '@storybook/addon-links','@storybook/addon-a11y/register', '@storybook/addon-docs', {
+  addons: ['@storybook/addon-actions', '@storybook/addon-links','@storybook/addon-a11y/register', {
+    name: '@storybook/addon-docs',
+    options: {
+      configureJSX: true,
+      babelOptions: {},
+      sourceLoaderOptions: null,
+    },
+  }, {
     name: '@storybook/addon-storysource',
     options: {
       rule: {
