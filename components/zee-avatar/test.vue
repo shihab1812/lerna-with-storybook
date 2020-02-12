@@ -1,9 +1,14 @@
 <template>
-  <tr>
-    <td v-for="(value, index) in values" :key="index">
-      {{ value }}
-    </td>
-  </tr>
+<section>
+
+  <div class="w-12 h-12 relative mb-4">
+    <div class="group w-full h-full rounded-full overflow-hidden shadow-inner text-center bg-purple table cursor-pointer">
+      <span class="hidden group-hover:table-cell text-white font-bold align-middle">KR</span>
+      <img src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png" alt="lovely avatar" class="object-cover object-center w-full h-full visible group-hover:hidden" />
+    </div>
+  </div>
+  
+</section>
 </template>
 
 <script>
@@ -11,8 +16,8 @@ import { withA11y } from '@storybook/addon-a11y';
 import { bool } from 'prop-types';
 
 /**
-Use an avatar for attributing actions or content to specific users.
-The user's name should always be present when using Avatar – either printed beside the avatar or in a tooltip.
+- Use an avatar for attributing actions or content to specific users.
+- The user's name should always be present when using Avatar – either printed beside the avatar or in a tooltip.
 **/
 export default {
   name: 'JTableRow',

@@ -4,14 +4,29 @@ import Avatar from './test.vue'
 
 
   export default {
-    title: 'Elements|/Avatar',
+    title: 'Patterns|Navbar',
     parameters: {
       component: Avatar,
       componentSubtitle: 'Displays an image that represents a user or organization',
     },
   };
 
-  export const ActionOnly = () => ({
+  export const navbar1 = () => ({
+    components : {Avatar},
+    template:     `
+    <Avatar
+      :values="values"
+    />
+  `,
+    data: () => ({
+      values: [
+        'José Silva',
+        'email@email.com'
+      ]
+    })
+  });
+
+  export const navbar2 = () => ({
     components : {Avatar},
     template:     `
     <Avatar

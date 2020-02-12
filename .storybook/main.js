@@ -1,17 +1,10 @@
 
 const path = require('path');
-
-
+  
 module.exports = {
   stories: ['../components/**/*.stories.(js|mdx)'],
-  addons: ['@storybook/addon-actions', '@storybook/addon-links','@storybook/addon-a11y/register', {
-    name: '@storybook/addon-docs',
-    options: {
-      configureJSX: true,
-      babelOptions: {},
-      sourceLoaderOptions: null,
-    },
-  }, {
+  presets: ['@storybook/addon-docs/preset','storybook-addon-deps/preset-explorer'],
+  addons: ['@storybook/addon-actions', '@storybook/addon-links','@storybook/addon-a11y/register', 'storybook-addon-deps',{
     name: '@storybook/addon-storysource',
     options: {
       rule: {
@@ -34,7 +27,7 @@ module.exports = {
       test: /\.scss$/,
       use: ['style-loader', 'css-loader', 'sass-loader']
     });
-
+    
     // Return the altered config
     return config;
   },

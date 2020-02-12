@@ -1,20 +1,34 @@
 
 <template>
     <!-- Extracting component classes: -->
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Button
-    </button>
+    <div class="">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Regular</button>
+            <avatar></avatar>
+    </div>
+
+
 </template>
+
 
 <script>
 import { withA11y } from '@storybook/addon-a11y';
+import {avatar} from '../zee-avatar';
+
+
 
 export default {
     name : 'ButtonCmpnt',
     decorators: [withA11y],
+    components : {avatar},
+    data: () => ({
+    values: [
+      'José Silva',
+      'email@email.com'
+    ]
+  }),
     props: { 
         /**
-         * Size of Buttons .....  Allowed values are 'sm' | 'md' | 'lg' | 'xl'
+         * Size of Buttons .....  Allowed values are ['sm', 'md', 'lg']
          */
         size : {
             type : String,
@@ -25,6 +39,9 @@ export default {
             }
         },
 
+       /**
+         * theme option ..... Allowed values are ['success', 'warning', 'danger']
+        **/
         theme : {
             type : String,
             required: false,

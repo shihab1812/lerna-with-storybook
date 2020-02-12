@@ -1,7 +1,10 @@
-import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { Story, Preview, Props, Description, Meta} from '@storybook/addon-docs/blocks';
 import Buttons from './index.vue';
 
-<Meta title="Elements|Buttons" component={Buttons} />
+import { DependenciesTable, Dependencies, Dependents } from 'storybook-addon-deps/blocks';
+import { parameters } from '@storybook/vue';
+
+<Meta title="Elements|Buttons" component={Buttons} parameters={{ component: Buttons }}/>
 
 # Buttons
 
@@ -20,16 +23,39 @@ Use an Buttons for attributing actions or content to specific users. The user's 
 
 <Props of={Buttons} />
 
-# sizes
+# NPM package 
+```javascript
+ npm install --save @xcompany-design-system/button
+```
 
-## this can have four varients
+# General usage code
+
+```javascript
+import ButtonCmpnt from '@xcompany-design-system/button';
+
+<ButtonCmpnt/>
+```
+
+## Table dependents + dependencies
+<DependenciesTable titleDependencies='Dependencies' titleDependents='Dependents' of={Buttons} />
+
+
+
+# Variations
+
+### this can have four varients
 
 see the below usage formats
 
-### Regular
-<Story name="sizes">
+#### Regular
+<Story name="sizes" height="100px">
   {{
     components : {Buttons},
     template: ' <Buttons/>',
   }}
 </Story>
+
+
+
+
+

@@ -3,5 +3,11 @@
   "version": "0.1.0",
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@npm_from_shihab/zee-table-row": "^1.1.0"
+  },
+  "devDependencies": {
+    "storybook-dep-webpack-plugin": "^1.0.3"
   }
 }
