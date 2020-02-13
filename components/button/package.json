@@ -1,6 +1,6 @@
 {
   "name": "@npm_from_shihab/button",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "publishConfig": {
     "access": "public"
   },
