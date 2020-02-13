@@ -4,7 +4,7 @@ import { DocsPage } from 'storybook-addon-deps/blocks';
 
 
 import Vue from 'vue';
-import '../assets/index.scss';
+import './assets/index.scss';
 
 import Button from '../components/button/index.vue';
 
