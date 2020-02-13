@@ -1,18 +1,18 @@
 {
   "name": "@npm_from_shihab/button",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@npm_from_shihab/zee-avatar": "^1.1.1",
+    "@npm_from_shihab/zee-avatar": "^1.1.2",
     "@npm_from_shihab/zee-table-row": "^1.1.0"
   },
   "devDependencies": {
     "storybook-dep-webpack-plugin": "^1.0.3"
   },
-  "repository" : {
-    "type" : "git",
+  "repository": {
+    "type": "git",
     "url": "https://github.com/shihab1812/lerna-with-storybook.git"
   }
 }
