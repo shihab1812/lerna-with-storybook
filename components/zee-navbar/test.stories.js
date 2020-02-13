@@ -1,22 +1,20 @@
 import { storiesOf } from '@storybook/vue'
-import Avatar from './test.vue'
+import Avatar1 from './test.vue'
 
 
 
   export default {
     title: 'Patterns|Navbar',
     parameters: {
-      component: Avatar,
+      component: Avatar1,
       componentSubtitle: 'Displays an image that represents a user or organization',
     },
   };
 
   export const navbar1 = () => ({
-    components : {Avatar},
+    components : {Avatar1},
     template:     `
-    <Avatar
-      :values="values"
-    />
+    <Avatar1/>
   `,
     data: () => ({
       values: [
@@ -27,11 +25,9 @@ import Avatar from './test.vue'
   });
 
   export const navbar2 = () => ({
-    components : {Avatar},
+    components : {Avatar1},
     template:     `
-    <Avatar
-      :values="values"
-    />
+    <Avatar1/>
   `,
     data: () => ({
       values: [

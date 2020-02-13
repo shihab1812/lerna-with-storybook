@@ -2,20 +2,9 @@
 const path = require('path');
   
 module.exports = {
-  stories: ['../components/**/*.stories.(js|mdx)'],
+  stories: ['../components/**/*.stories.(js|ts|tsx|mdx)'],
   presets: ['@storybook/addon-docs/preset','storybook-addon-deps/preset-explorer'],
-  addons: ['@storybook/addon-actions', '@storybook/addon-links','@storybook/addon-a11y/register', 'storybook-addon-deps',{
-    name: '@storybook/addon-storysource',
-    options: {
-      rule: {
-        // test: [/\.stories\.jsx?$/], This is default
-        include: [path.resolve(__dirname, '../components')], // You can specify directories
-      },
-      loaderOptions: {
-        prettierConfig: { printWidth: 80, singleQuote: false },
-      },
-    },
-  }],
+  addons: ['@storybook/addon-actions', '@storybook/addon-links','@storybook/addon-a11y/register', 'storybook-addon-deps','@storybook/addon-storysource'],
 
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
@@ -25,9 +14,30 @@ module.exports = {
     // Make whatever fine-grained changes you need
     config.module.rules.push({
       test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader']
+      loaders: ['style-loader', 'css-loader', 'sass-loader'],
+      include: path.resolve(__dirname, '../'),
     });
     
+
+    // postc ss loader config
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: [
+        {
+          loader: "postcss-loader",
+          options: {
+            ident: "postcss",
+            plugins: [
+              require("postcss-import"),
+              require("tailwindcss"),
+              require("autoprefixer")
+            ]
+          }
+        }
+      ],
+      include: path.resolve(__dirname, "../")
+    });
+
     // Return the altered config
     return config;
   },

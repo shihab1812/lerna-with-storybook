@@ -14,9 +14,7 @@ import Avatar from './test.vue'
   export const ActionOnly = () => ({
     components : {Avatar},
     template:     `
-    <Avatar
-      :values="values"
-    />
+    <Avatar/>
   `,
     data: () => ({
       values: [

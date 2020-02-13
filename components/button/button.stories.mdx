@@ -1,10 +1,10 @@
 import { Story, Preview, Props, Description, Meta} from '@storybook/addon-docs/blocks';
-import Buttons from './index.vue';
+import {Button} from './index.js';
 
 import { DependenciesTable, Dependencies, Dependents } from 'storybook-addon-deps/blocks';
 import { parameters } from '@storybook/vue';
 
-<Meta title="Elements|Buttons" component={Buttons} parameters={{ component: Buttons }}/>
+<Meta title="Elements|Buttons" component={Button} parameters={{ component: Button }}/>
 
 # Buttons
 
@@ -15,13 +15,13 @@ Use an Buttons for attributing actions or content to specific users. The user's 
 <Preview withToolbar>
   <Story name="standard" height="100px">
     {{
-    components : {Buttons},
-    template: ' <Buttons/>',
+    components : {Button},
+    template: `<Button/>`,
   }}
   </Story>
 </Preview>
 
-<Props of={Buttons} />
+<Props of={Button} />
 
 # NPM package 
 ```javascript
@@ -35,9 +35,14 @@ import ButtonCmpnt from '@xcompany-design-system/button';
 
 <ButtonCmpnt/>
 ```
+# Table dependents + dependencies
+<DependenciesTable titleDependencies='Dependencies' titleDependents='Dependents' of={Button} />
 
-## Table dependents + dependencies
-<DependenciesTable titleDependencies='Dependencies' titleDependents='Dependents' of={Buttons} />
+## 2. Dependencies and Dependents tables
+
+<Dependencies of={Button} />
+
+<Dependents of={Button} />
 
 
 
@@ -50,8 +55,8 @@ see the below usage formats
 #### Regular
 <Story name="sizes" height="100px">
   {{
-    components : {Buttons},
-    template: ' <Buttons/>',
+    components : {Button},
+    template: ' <Button/>',
   }}
 </Story>
 
